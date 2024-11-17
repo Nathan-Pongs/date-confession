@@ -1,0 +1,79 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling from random heart generation */
+    color: white;
+    text-align: center;
+}
+
+#page1 {
+    background-color: rgba(221, 112, 112, 0.685);
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Prevent cloned hearts from overflowing */
+    border-radius: 10px;
+}
+
+.label {
+    display: flex;
+    padding: 10px 0 10px 0;
+}
+.btn-container {
+    margin-right: 100px;
+}
+
+.btn-container button {
+    margin: 0 10px 0 10px;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+    background-color: rgba(8, 202, 8, 0.582);
+}
+
+.noBtn {
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    background-color: rgba(255, 0, 0, 0.658) !important;
+}
+
+.heart {
+    position: absolute; /* Positioning for random placement */
+    font-size: 20px; /* Default size; overridden by JS for random sizes */
+    color: red; /* Default color; can be customized in JS */
+    pointer-events: none; /* Prevent interaction with hearts */
+    animation: fadeOut 5s ease-out forwards; /* Animation for fade-out */
+}
+
+.date-picker-button, .link-button {
+    margin-top: 20px;
+    padding: 5px 20px 5px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.date-picker-button:hover, .date-picker-button:hover, .btn-container button:hover, .link-button:hover {
+    transform: scale(1.1);
+}
+
+/* Keyframe animation for fading out */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5); /* Hearts grow slightly before fading */
+    }
+}
