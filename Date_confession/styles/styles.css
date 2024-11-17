@@ -12,6 +12,7 @@ body {
 #page1 {
     background-color: rgba(221, 112, 112, 0.685);
     padding: 20px;
+    margin: 10px;
     position: relative;
     display: flex;
     flex-direction: column;
